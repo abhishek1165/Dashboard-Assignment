@@ -30,7 +30,7 @@ const FilterPanel = ({ filters, onFilterChange }) => {
       });
       const options = await response.json();
       
-      // Ensure all options are arrays
+     
       const safeOptions = {
         sectors: Array.isArray(options?.sectors) ? options.sectors : [],
         regions: Array.isArray(options?.regions) ? options.regions : [],
@@ -46,7 +46,7 @@ const FilterPanel = ({ filters, onFilterChange }) => {
       setFilterOptions(safeOptions);
     } catch (error) {
       console.error('Error fetching filter options:', error);
-      // Keep default empty arrays on error
+   
     }
   };
 

@@ -7,14 +7,14 @@ const Data = require('../models/Data');
 
 const loadData = async () => {
   try {
-    // Connect to MongoDB
+   
     await mongoose.connect(process.env.MONGODB_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
     console.log('Connected to MongoDB');
 
-    // Read JSON file
+   
     const dataPath = path.join(__dirname, '../../data/jsondata.json');
     
     if (!fs.existsSync(dataPath)) {
@@ -28,15 +28,15 @@ const loadData = async () => {
 
     console.log(`Found ${jsonData.length} records in JSON file`);
 
-    // Clear existing data
+   
     await Data.deleteMany({});
     console.log('Cleared existing data');
 
-    // Insert new data
+   
     const result = await Data.insertMany(jsonData);
     console.log(`Successfully inserted ${result.length} records`);
 
-    // Create indexes
+    
     await Data.createIndexes();
     console.log('Created database indexes');
 

@@ -66,9 +66,9 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// Logout user
+
 router.post('/logout', authenticateToken, (req, res) => {
-  // Here, you might clear a session or token store
+  
   res.json({ message: 'User logged out successfully' });
 });
 

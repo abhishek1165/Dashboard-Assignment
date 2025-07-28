@@ -22,7 +22,7 @@ const KPICards = ({ data, loading }) => {
     );
   }
 
-  // Ensure data is an array
+  
   const safeData = Array.isArray(data) ? data : [];
 
   const totalRecords = safeData.length;

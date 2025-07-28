@@ -5,14 +5,14 @@ const User = require('../models/User');
 
 const createAdminUser = async () => {
   try {
-    // Connect to MongoDB
+    
     await mongoose.connect(process.env.MONGODB_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
     console.log('Connected to MongoDB');
 
-    // Check if admin user already exists
+    
     const existingAdmin = await User.findOne({ email: 'admin@dashboard.com' });
     
     if (existingAdmin) {
@@ -20,7 +20,7 @@ const createAdminUser = async () => {
       process.exit(0);
     }
 
-    // Create admin user
+    
     const adminUser = new User({
       username: 'admin',
       email: 'admin@dashboard.com',

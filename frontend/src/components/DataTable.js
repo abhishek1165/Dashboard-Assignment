@@ -12,7 +12,7 @@ const DataTable = ({ data, loading }) => {
     );
   }
 
-  // Ensure data is an array
+  
   const safeData = Array.isArray(data) ? data : [];
 
   if (safeData.length === 0) {

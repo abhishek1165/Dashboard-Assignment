@@ -223,7 +223,8 @@ function App() {
           </div>
         </nav>
 
-        <div className="w-full">
+        {/* Main content with proper spacing for fixed header */}
+        <div className="w-full pt-20"> {/* Added pt-20 to account for fixed header */}
           <div className="flex flex-col lg:flex-row gap-0">
             {/* Filter Sidebar */}
             <div className="w-full lg:w-80 lg:flex-shrink-0">
@@ -238,7 +239,7 @@ function App() {
             </div>
             
             {/* Main Content */}
-            <div className="flex-1 px-4">
+            <div className="flex-1 px-4 py-6"> {/* Added py-6 for better spacing */}
               <motion.div
                 variants={containerVariants}
                 initial="hidden"
