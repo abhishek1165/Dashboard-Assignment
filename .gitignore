@@ -1,0 +1,6 @@
+.data
+.jsondata.json
+node_modules/
+*.log
+.env
+.cache/

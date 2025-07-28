@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global CSS reset to eliminate unwanted spacing */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Custom component styles */
+@layer components {
+  .dashboard-card {
+    @apply bg-white dark:bg-card-gradient border border-gray-200 dark:border-purple-primary/15 rounded-2xl shadow-lg dark:shadow-[0_8px_32px_rgba(0,0,0,0.2)] mb-8 overflow-hidden animate-fade-in-up transition-all duration-300;
+  }
+  
+  .dashboard-card-header {
+    @apply bg-gradient-to-r from-blue-600 to-purple-600 dark:bg-purple-gradient border-b border-gray-200 dark:border-purple-primary/20 font-bold text-white py-5 px-6 rounded-t-2xl transition-colors duration-300;
+  }
+  
+  .dashboard-card-body {
+    @apply p-6 transition-colors duration-300;
+  }
+  
+  .filter-panel {
+    @apply bg-white dark:bg-card-gradient rounded-2xl shadow-xl dark:shadow-[0_8px_32px_rgba(0,0,0,0.3)] p-8 mb-4 border border-gray-200 dark:border-purple-primary/15 backdrop-blur-[10px] transition-all duration-300 w-full;
+  }
+  
+  .filter-panel h5 {
+    @apply text-gray-800 dark:text-text-white font-bold text-xl mb-6 flex items-center gap-2 transition-colors duration-300;
+  }
+  
+  .filter-panel h5::before {
+    content: '🎯';
+    @apply text-xl;
+  }
+  
+  .kpi-card {
+    @apply border-none rounded-2xl transition-all duration-300 shadow-xl backdrop-blur-[10px] relative overflow-hidden;
+  }
+  
+  .kpi-card::before {
+    content: '';
+    @apply absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-br from-white/10 to-white/5 rounded-2xl pointer-events-none;
+  }
+  
+  .kpi-card:hover {
+    @apply -translate-y-2 scale-[1.02] shadow-2xl;
+  }
+  
+  /* Aspect ratio utility */
+  .aspect-square {
+    aspect-ratio: 1 / 1;
+  }
+  
+  .kpi-value {
+    @apply text-4xl font-extrabold mb-1 bg-text-gradient bg-clip-text text-transparent;
+  }
+  
+  .kpi-label {
+    @apply text-sm opacity-90 mb-0 font-medium uppercase tracking-wider;
+  }
+  
+  .chart-container {
+    @apply relative h-[350px] w-full bg-white dark:bg-white/[0.02] shadow-md dark:shadow-none border border-gray-200 dark:border-none rounded-xl p-4 transition-colors duration-300;
+  }
+  
+  /* Loading Spinner */
+  .loading-container {
+    @apply flex justify-center items-center h-[300px];
+  }
+  
+  .loading-spinner {
+    @apply text-purple-primary;
+  }
+  
+  /* Filter Groups */
+  .filter-group {
+    @apply mb-6;
+  }
+  
+  .filter-group label {
+    @apply font-semibold mb-3 text-gray-800 dark:text-text-white text-sm uppercase tracking-wider block;
+  }
+  
+  /* Add a new class for the navigation */
+  .nav-container {
+    @apply bg-white/80 dark:bg-card-gradient border-b border-gray-200 dark:border-purple-primary/20 shadow-md dark:shadow-[0_4px_20px_rgba(0,0,0,0.3)] backdrop-blur-[10px] fixed w-full z-[100] transition-all duration-300;
+  }
+
+  .admin-dropdown {
+    @apply absolute right-0 mt-2 w-48 bg-white dark:bg-card-gradient border border-gray-200 dark:border-purple-primary/15 rounded-lg shadow-lg z-[1000] transition-all duration-200;
+    transform: translateZ(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .chart-container {
+    @apply h-[280px];
+  }
+  
+  .kpi-value {
+    @apply text-3xl;
+  }
+  
+  .filter-panel {
+    @apply p-6;
+  }
+  
+  .dashboard-card-header {
+    @apply py-4 px-5;
+  }
+}
