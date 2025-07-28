@@ -1,0 +1,17 @@
+{
+  "name": "visualization-dashboard",
+  "version": "1.0.0",
+  "description": "Data visualization dashboard with React frontend and Node.js backend",
+  "scripts": {
+    "build": "cd frontend && npm install && npm run build",
+    "start": "cd frontend && npm start",
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm start\"",
+    "install-deps": "cd frontend && npm install && cd ../backend && npm install"
+  },
+  "keywords": ["dashboard", "visualization", "react", "nodejs"],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
